@@ -7,7 +7,7 @@ import {PointModel} from "../models/point.model";
 })
 export class MapService {
   public map!: L.Map
-  waypoints: PointModel[] = []
+  public waypoints: PointModel[] = []
 
   public initMap(): void {
     this.map = L.map('map', {
@@ -21,16 +21,14 @@ export class MapService {
     }).addTo(this.map);
   }
 
-  addWaypointToMap(point: PointModel): void {
+  public addWaypointToMap(point: PointModel): void {
     this.waypoints.push(point);
-
       const waypoints = this.waypoints.map(p => L.Routing.waypoint(L.latLng(p.latitude, p.longitude)));
       L.Routing.control({
         waypoints,
         addWaypoints: false,
         show: false
       }).addTo(this.map);
-
       this.waypoints.forEach(point => {
         L.marker(L.latLng(point.latitude, point.longitude))
           .addTo(this.map)
