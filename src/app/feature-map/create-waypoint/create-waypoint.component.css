@@ -1,0 +1,26 @@
+.container {
+  margin-left: 80px;
+  margin-top: 100px;
+  border: 2px solid black;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+.button {
+  width: 100%;
+  background-color: aquamarine;
+}
+
+

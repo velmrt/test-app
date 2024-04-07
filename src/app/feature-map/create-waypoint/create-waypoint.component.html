@@ -1,0 +1,27 @@
+<div class="container">
+  <form [formGroup]="createWaypointForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Название</mat-label>
+      <input formControlName="name" matInput>
+    </mat-form-field>
+
+    <table class="example-full-width">
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>Широта</mat-label>
+            <input formControlName="latitude" matInput>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Долота</mat-label>
+            <input formControlName="longitude" matInput>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+  </form>
+  <button class="button" mat-button (click)="onSubmit()" [disabled]="createWaypointForm.invalid">Добавить точку</button>
+</div>
